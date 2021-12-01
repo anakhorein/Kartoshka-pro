@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C12C11F18064C82AF644A21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C12C668CA731D96F48791AE /* DetailView.swift */; };
+		3C12C5C13E7FA992A719876B /* nutrients.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */; };
+		3C12CD86F0723F37B9C06383 /* MultipleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */; };
 		F397983E2736757100E51781 /* Kartoshka_proApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397983D2736757100E51781 /* Kartoshka_proApp.swift */; };
 		F39798402736757100E51781 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397983F2736757100E51781 /* ContentView.swift */; };
 		F39798422736757300E51781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39798412736757300E51781 /* Assets.xcassets */; };
 		F39798452736757300E51781 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39798442736757300E51781 /* Preview Assets.xcassets */; };
+		F397984C2737BBA900E51781 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397984B2737BBA900E51781 /* Model.swift */; };
+		F397984E27382C3400E51781 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397984D27382C3400E51781 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nutrients.json; sourceTree = "<group>"; };
+		3C12C668CA731D96F48791AE /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSelectionView.swift; sourceTree = "<group>"; };
 		F397983A2736757100E51781 /* Kartoshka pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kartoshka pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F397983D2736757100E51781 /* Kartoshka_proApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kartoshka_proApp.swift; sourceTree = "<group>"; };
 		F397983F2736757100E51781 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F39798412736757300E51781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39798442736757300E51781 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F397984B2737BBA900E51781 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F397984D27382C3400E51781 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,7 @@
 			children = (
 				F397983C2736757100E51781 /* Kartoshka pro */,
 				F397983B2736757100E51781 /* Products */,
+				3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +66,10 @@
 				F397983F2736757100E51781 /* ContentView.swift */,
 				F39798412736757300E51781 /* Assets.xcassets */,
 				F39798432736757300E51781 /* Preview Content */,
+				F397984B2737BBA900E51781 /* Model.swift */,
+				F397984D27382C3400E51781 /* Functions.swift */,
+				3C12C668CA731D96F48791AE /* DetailView.swift */,
+				3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */,
 			);
 			path = "Kartoshka pro";
 			sourceTree = "<group>";
@@ -127,6 +142,7 @@
 			files = (
 				F39798452736757300E51781 /* Preview Assets.xcassets in Resources */,
 				F39798422736757300E51781 /* Assets.xcassets in Resources */,
+				3C12C5C13E7FA992A719876B /* nutrients.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F397984C2737BBA900E51781 /* Model.swift in Sources */,
 				F39798402736757100E51781 /* ContentView.swift in Sources */,
 				F397983E2736757100E51781 /* Kartoshka_proApp.swift in Sources */,
+				F397984E27382C3400E51781 /* Functions.swift in Sources */,
+				3C12C11F18064C82AF644A21 /* DetailView.swift in Sources */,
+				3C12CD86F0723F37B9C06383 /* MultipleSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
