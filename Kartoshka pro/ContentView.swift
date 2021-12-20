@@ -144,16 +144,19 @@ struct ContentView: View {
 
                                     ForEach(foods, id: \.id) { item in
                                         HStack(spacing: 1) {
-                                            if (selectedNutrients != nil) {
+                                           
                                                 ForEach(selectedNutrients, id: \.id) { nutrient in
-                                                    if (item.n1008 != nil) {
-                                                        Text(String(format: "%.1f", locale: Locale.current, (item.n1008!)))
-                                                                .frame(width: 49, alignment: .trailing)
-                                                                .foregroundColor(selectedFoodId == item.id ? rowForegroundColorHighlight : sortType == "proteins" ? colHighlightColor : colDefaultColor)
-
+                                                   
+                                                    let val = item["n\(nutrient.id)"]
+                                                    if let temp = val as? Float {
+                                                        Text(String(format: "%.1f", locale: Locale.current, temp ))
+                                                                    .frame(width: 49, alignment: .trailing)
+                                                                    .foregroundColor(selectedFoodId == item.id ? rowForegroundColorHighlight : sortType == "proteins" ? colHighlightColor : colDefaultColor)
+                                                    } else {
+                                                       
                                                     }
+                                                    
                                                 }
-                                            }
                                         }.background(selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
                                                 .font(Font.headline.weight(.light).monospacedDigit())
                                                 .onTapGesture {
@@ -340,3 +343,14 @@ struct ColumnHeader: View {
                 .font(Font.headline.weight(.light))
     }
 }
+
+protocol PropertyReflectable { }
+
+extension PropertyReflectable {
+    subscript(key: String) -> Any? {
+        let m = Mirror(reflecting: self)
+        return m.children.first { $0.label == key }?.value
+    }
+}
+
+extension Food : PropertyReflectable {}
