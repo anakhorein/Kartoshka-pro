@@ -60,7 +60,14 @@ struct ContentView: View {
     @State private var x = 0
 
     @State private var nutrients: [Nutrient]?
-    @State private var selectedNutrients = [Nutrient(id: "1008", name: "Energy", nutrient_nbr: "208", rank: "300", unit_name: "KCAL")]
+    @State private var selectedNutrients = [Nutrient(id: "1008", name: "Energy", nutrient_nbr: "208", rank: "300", unit_name: "KCAL"),
+                                            Nutrient(id: "1003", name: "Protein", nutrient_nbr: "203", rank: "600", unit_name: "G"),
+                                            Nutrient(id: "1004", name: "Total lipid (fat)", nutrient_nbr: "204", rank: "800", unit_name: "G"),
+                                            Nutrient(id: "1005", name: "Carbohydrate, by difference", nutrient_nbr: "205", rank: "1110", unit_name: "G")
+    ]
+
+    @State private var page = 1
+    @State private var count = 0
 
 
     init() {
@@ -72,18 +79,19 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack(spacing: 5) {
-                    TextField(Locale.current.languageCode != "ru" ? "Search" : "Поиск", text: $textSearch)
+                    TextField(Locale.current.languageCode != "ru" ? "Search (min 3 symbols)" : "Поиск (минимум 3 буквы)", text: $textSearch)
                             .padding(7)
                             .padding(.horizontal, 25)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
                             .onChange(of: textSearch) { newValue in
                                 if (newValue == "") {
-                                    filterFood(categoryCurrent)
+                                    filterFoodByTitle("")
                                 } else {
-                                    filterFoodByTitle(newValue)
+                                    if(newValue.count>2){
+                                        filterFoodByTitle(newValue)
+                                    }
                                 }
-                                sortChange()
                             }
                             .overlay(
                                     HStack {
@@ -111,7 +119,8 @@ struct ContentView: View {
                             }
 
 
-                }.padding(.horizontal, 15)
+                }
+                        .padding(.horizontal, 15)
 
 
                 GeometryReader { geometry in
@@ -126,53 +135,74 @@ struct ContentView: View {
                         } else {
                             HStack(alignment: .top, spacing: 0) {
 
-                                LazyVStack(alignment: .leading, spacing: 3) {
+                                VStack(alignment: .leading, spacing: 3) {
 
                                     HStack(spacing: 1) {
-                                        if (selectedNutrients != nil) {
-                                            ForEach(selectedNutrients, id: \.id) { item in
-                                                ColumnHeader(title: item.name, literal: item.id)
-                                                        .foregroundColor(sortType == item.id ? colHighlightColor : linkColor)
-                                                        .onTapGesture {
-                                                            sortChange(item.id, sortDirection)
-                                                        }
-                                            }
+                                        ForEach(selectedNutrients, id: \.id) { nutrient in
+                                            ColumnHeader(title: nutrient.name, literal: nutrient.id)
+                                                    .foregroundColor(sortType == "n\(nutrient.id)" ? colHighlightColor : linkColor)
+                                                    .onTapGesture {
+                                                        sortChange("n\(nutrient.id)")
+                                                    }
+                                                    .frame(
+                                                            minWidth: 0,
+                                                            maxWidth: 49,
+                                                            minHeight: 0,
+                                                            maxHeight: .infinity,
+                                                            alignment: .topLeading
+                                                    )
+                                                    //.border(.red)
                                         }
                                     }
-                                            .frame(height: 100, alignment: .bottomLeading)
 
 
                                     ForEach(foods, id: \.id) { item in
                                         HStack(spacing: 1) {
-                                           
-                                                ForEach(selectedNutrients, id: \.id) { nutrient in
-                                                   
-                                                    let val = item["n\(nutrient.id)"]
-                                                    if let temp = val as? Float {
-                                                        Text(String(format: "%.1f", locale: Locale.current, temp ))
-                                                                    .frame(width: 49, alignment: .trailing)
-                                                                    .foregroundColor(selectedFoodId == item.id ? rowForegroundColorHighlight : sortType == "proteins" ? colHighlightColor : colDefaultColor)
-                                                    } else {
-                                                       
-                                                    }
-                                                    
+                                            ForEach(selectedNutrients, id: \.id) { nutrient in
+                                                let val = item["n\(nutrient.id)"]
+                                                if let temp = val as? Float {
+                                                    Text(String(format: temp>100 ? "%.0f" : "%.1f", locale: Locale.current, temp))
+                                                            //.frame(width: 49, alignment: .trailing)
+                                                            .foregroundColor(selectedFoodId == item.id ? rowForegroundColorHighlight : sortType == "n\(nutrient.id)" ? colHighlightColor : colDefaultColor).frame(
+                                                                minWidth: 0,
+                                                                maxWidth: 49,
+                                                                minHeight: 0,
+                                                                // maxHeight: .infinity,
+                                                                alignment: .trailing
+                                                        )
+                                                        //.border(.green)
+                                                } else {
+                                                    Text(String(format: "%.1f", locale: Locale.current, ""))
+                                                            //.frame(width: 49, alignment: .trailing)
+                                                            .foregroundColor(selectedFoodId == item.id ? rowForegroundColorHighlight : sortType == "n\(nutrient.id)" ? colHighlightColor : colDefaultColor).frame(
+                                                                minWidth: 0,
+                                                                maxWidth: 49,
+                                                                minHeight: 0,
+                                                               // maxHeight: .infinity,
+                                                                alignment: .trailing
+                                                        )
+                                                        //.border(.green)
                                                 }
-                                        }.background(selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
+                                            }
+                                        }
+                                                .background(selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
                                                 .font(Font.headline.weight(.light).monospacedDigit())
                                                 .onTapGesture {
                                                     self.selectedFoodId = item.id
                                                 }
+                                        
                                     }
-                                }.frame(width: 159, alignment: .leading)
+                                }
 
-                                LazyVStack(alignment: .leading, spacing: 3) {
+                                VStack(alignment: .leading, spacing: 3) {
                                     VStack {
                                         Text("in 100 grams")
                                                 .frame(height: 100, alignment: .bottomLeading)
                                                 .font(Font.headline.weight(.light))
                                                 .foregroundColor(Color(UIColor.systemGray2))
                                                 .offset(x: 10, y: -3)
-                                    }.frame(height: 100)
+                                    }
+                                            .frame(height: 100)
 
                                     ForEach(foods, id: \.id) { item in
                                         HStack() {
@@ -192,14 +222,44 @@ struct ContentView: View {
                                                             modalFood = nil
                                                         }
                                                     }
-                                        }.padding(.leading, 10.0)
+                                        }
+                                                .padding(.leading, 10.0)
                                                 .background(selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
 
                                     }
+
                                 }
+                                        .frame(
+                                                minWidth: 0,
+                                                maxWidth: .infinity,
+                                                minHeight: 0,
+                                                maxHeight: .infinity,
+                                                alignment: .topLeading
+                                        )
+
+                            }
+                            VStack() {
+                                let pages: Int = Int(ceil(Double(count) / Double(100)))
+                                Text("Results: \(count), page \(page) of \(pages)").padding(.top,15).foregroundColor(.gray).font(Font.headline.weight(.light))
+                                HStack() {
+                                    if (page > 1) {
+                                        Button(String("Previous page")) {
+                                            page = page - 1
+                                            loadData()
+                                        }
+                                    }
+                                    if (Double(count) / Double(100) > Double(page)) {
+                                        Button(String("Next page")) {
+                                            page = page + 1
+                                            loadData()
+                                        }
+                                    }
+                                }
+                                        .padding(.bottom, 20)
                             }
                         }
-                    }.onAppear(perform: loadData).padding(10).edgesIgnoringSafeArea(.all)
+                    }
+                            .onAppear(perform: loadData).padding(10).edgesIgnoringSafeArea(.all)
 
                 }
             }
@@ -209,28 +269,47 @@ struct ContentView: View {
                             Button(action: {
                                 self.showLanguageSheet.toggle()
                             }) {
-                                Text("Nutrients")
-                                        .foregroundColor(linkColor)
+                                Text("Nutrients").foregroundColor(linkColor)
                             }
                                     .sheet(isPresented: $showLanguageSheet) {
-                                        MultipleSelectionList(nutrients: self.$nutrients, selectedNutrients: self.$selectedNutrients)
+                                        MultipleSelectionList(nutrients: self.$nutrients, selectedNutrients: self.$selectedNutrients).onDisappear(perform: loadData)
                                     }
 
                         })
+                       
                         ToolbarItem(placement: .navigationBarTrailing, content: {
-                            Picker(selection: $categoryCurrent, label: Text("Categories").foregroundColor(linkColor)) {
-                                ForEach(categories, id: \.self) {
-                                    Text(Locale.current.languageCode != "ru" ? $0.title_en : $0.title)
+                            Menu{
+                                ForEach(categories, id: \.self){ index in
+                                    Button(action : {
+                                        filterFood(index)
+                                    }) {
+                                        if categoryCurrent == index{
+                                            if(index.id == "branded_food"){
+                                                Label("\(index.title) \n(may contain wrong data)", systemImage: "checkmark")
+                                                         .lineLimit(2)
+                                            }else{
+                                                Label("\(index.title)", systemImage: "checkmark")
+                                            }
+                                           
+                                        }else {
+                                            if(index.id == "branded_food"){
+                                                Text("\(index.title) \n(may contain wrong data)")
+                                                         .lineLimit(2)
+                                            }else{
+                                                Text("\(index.title)")
+                                            }
+                                        }
+                                    }
                                 }
+                            } label: {
+                                Text("Categories").foregroundColor(linkColor)
                             }
-                                    .onChange(of: categoryCurrent, perform: { filterFood($0); sortChange(sortType, sortDirection) })
-                                    .pickerStyle(MenuPickerStyle())
-
                         })
                     })
                     .navigationTitle(Locale.current.languageCode != "ru" ? categoryCurrent.title_en : categoryCurrent.title)
 
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+                .navigationViewStyle(StackNavigationViewStyle())
 
 
     }
@@ -238,6 +317,7 @@ struct ContentView: View {
 
     func filterFoodByTitle(_ text: String) {
         self.searchText = text
+        page = 1
         loadData()
     }
 
@@ -246,11 +326,17 @@ struct ContentView: View {
         loadData()
     }
 
-    func sortChange(_ sortType: String = "id", _ sortDirection: String = "desc") {
-
+    func sortChange(_ sortType: String = "id") {
+        if (self.sortType == sortType) {
+            if (sortDirection == "desc") {
+                sortDirection = "asc"
+            } else {
+                sortDirection = "desc"
+            }
+        }
         self.sortType = sortType
-        self.sortDirection = sortDirection
 
+        loadData()
     }
 
     func loadData() {
@@ -259,50 +345,55 @@ struct ContentView: View {
 
         let cache = URLCache.shared
         var request = URLRequest(url: URL(string: "https://api.knyazev.site/food/")!/*,     cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 10.0*/)
-        if let data = cache.cachedResponse(for: request)?.data {
-            print("Загрузили из кэша")
-            processData(data)
-        } else {
+        //if let data = cache.cachedResponse(for: request)?.data {
+        //    print("Загрузили из кэша")
+        //     processData(data)
+        //} else {
 
-            let session = URLSession.shared
+        let session = URLSession.shared
+        
+        var types = [categoryCurrent.id]
+        if(categoryCurrent.id==""){
+            types = ["branded_food", "experimental_food", "foundation_food", "sr_legacy_food", "survey_fndds_food"]
+        }
 
-            let parameterDictionary = [
-                "page": 1,
-                "sort": sortType,
-                "sortOrder": sortDirection,
-                "types": [categoryCurrent.id],
-                "search": searchText,
-                "nutrients": selectedNutrients.map({ $0.id })
-            ] as [String: Any]
+        let parameterDictionary = [
+            "page": page,
+            "sort": sortType,
+            "sortOrder": sortDirection,
+            "types": types,
+            "search": searchText,
+            "nutrients": selectedNutrients.map({ $0.id })
+        ] as [String: Any]
 
-            request.httpMethod = "POST"
-            request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+            return
+        }
+
+        request.httpBody = httpBody
+
+        let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+            if let error = error {
+                print(String(describing: error))
                 return
             }
-
-            request.httpBody = httpBody
-
-            let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-                if let error = error {
-                    print(String(describing: error))
-                    return
-                }
-                if let data = data, let response = response {
-                    if let httpResponse = response as? HTTPURLResponse {
-                        if httpResponse.statusCode == 200 {
-                            let cachedData = CachedURLResponse(response: response, data: data)
-                            cache.storeCachedResponse(cachedData, for: request)
-                        }
+            if let data = data, let response = response {
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode == 200 {
+                        let cachedData = CachedURLResponse(response: response, data: data)
+                        cache.storeCachedResponse(cachedData, for: request)
                     }
-
-                    print("\(request.curlString)")
-                    processData(data)
-                    return
                 }
-            })
-            task.resume()
-        }
+
+                print("\(request.curlString)")
+                processData(data)
+                return
+            }
+        })
+        task.resume()
+        //}
     }
 
     func jsonLocalLoad() {
@@ -320,14 +411,17 @@ struct ContentView: View {
     func processData(_ data: Data) {
         do {
             let decodedResponse = try JSONDecoder().decode(Answer.self, from: data)
+            //print("\(decodedResponse)")
             DispatchQueue.main.async {
                 self.foods = decodedResponse.food
+                self.count = decodedResponse.count
                 showProgress = false
             }
         } catch {
             print(String(describing: error))
         }
     }
+
 }
 
 struct ColumnHeader: View {
@@ -344,13 +438,18 @@ struct ColumnHeader: View {
     }
 }
 
-protocol PropertyReflectable { }
+protocol PropertyReflectable {
+}
 
 extension PropertyReflectable {
     subscript(key: String) -> Any? {
         let m = Mirror(reflecting: self)
-        return m.children.first { $0.label == key }?.value
+        return m.children.first {
+                    $0.label == key
+                }?
+                .value
     }
 }
 
-extension Food : PropertyReflectable {}
+extension Food: PropertyReflectable {
+}
