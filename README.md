@@ -23,8 +23,11 @@ Kartoshka pro/
 ├── Models/         # Модели данных
 ├── Views/          # SwiftUI представления
 ├── ViewModels/     # ViewModels для MVVM
+├── Repositories/   # Репозитории для работы с данными
+├── Utils/          # Вспомогательные утилиты
 ├── Extensions/     # Расширения Swift
 ├── Config.swift    # Конфигурация приложения
+├── nutrients.json  # Локальная база данных нутриентов
 └── Assets.xcassets # Ресурсы приложения
 ```
 
