@@ -33,9 +33,20 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3085EEC2DC7A7DF00D98846"
+               BlueprintIdentifier = "F3085F042DC7A93500D98846"
                BuildableName = "Kartoshka proUITests.xctest"
                BlueprintName = "Kartoshka proUITests"
+               ReferencedContainer = "container:Kartoshka pro.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3B4AA5F2DC7C5EC008C673B"
+               BuildableName = "Kartoshka proTests.xctest"
+               BlueprintName = "Kartoshka proTests"
                ReferencedContainer = "container:Kartoshka pro.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -24,6 +24,13 @@
 			remoteGlobalIDString = F39798392736757100E51781;
 			remoteInfo = "Kartoshka pro";
 		};
+		F3B4AA642DC7C5EC008C673B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F39798322736757100E51781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F39798392736757100E51781;
+			remoteInfo = "Kartoshka pro";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,7 @@
 		F397983D2736757100E51781 /* Kartoshka_proApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kartoshka_proApp.swift; sourceTree = "<group>"; };
 		F39798412736757300E51781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39798442736757300E51781 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3B4AA602DC7C5EC008C673B /* Kartoshka proTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kartoshka proTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,6 +55,7 @@
 		F3085ED42DC7736E00D98846 /* Repositories */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Repositories; sourceTree = "<group>"; };
 		F3085ED72DC7742B00D98846 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
 		F3085F062DC7A93500D98846 /* Kartoshka proUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Kartoshka proUITests"; sourceTree = "<group>"; };
+		F3B4AA612DC7C5EC008C673B /* Kartoshka proTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Kartoshka proTests"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F39798372736757100E51781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B4AA5D2DC7C5EC008C673B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,6 +98,7 @@
 				F3085E9B2DC7637900D98846 /* README.md */,
 				F397983C2736757100E51781 /* Kartoshka pro */,
 				F3085F062DC7A93500D98846 /* Kartoshka proUITests */,
+				F3B4AA612DC7C5EC008C673B /* Kartoshka proTests */,
 				F3085EFE2DC7A85A00D98846 /* Frameworks */,
 				F397983B2736757100E51781 /* Products */,
 			);
@@ -92,6 +109,7 @@
 			children = (
 				F397983A2736757100E51781 /* Kartoshka pro.app */,
 				F3085F052DC7A93500D98846 /* Kartoshka proUITests.xctest */,
+				F3B4AA602DC7C5EC008C673B /* Kartoshka proTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +191,29 @@
 			productReference = F397983A2736757100E51781 /* Kartoshka pro.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F3B4AA5F2DC7C5EC008C673B /* Kartoshka proTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3B4AA662DC7C5EC008C673B /* Build configuration list for PBXNativeTarget "Kartoshka proTests" */;
+			buildPhases = (
+				F3B4AA5C2DC7C5EC008C673B /* Sources */,
+				F3B4AA5D2DC7C5EC008C673B /* Frameworks */,
+				F3B4AA5E2DC7C5EC008C673B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3B4AA652DC7C5EC008C673B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3B4AA612DC7C5EC008C673B /* Kartoshka proTests */,
+			);
+			name = "Kartoshka proTests";
+			packageProductDependencies = (
+			);
+			productName = "Kartoshka proTests";
+			productReference = F3B4AA602DC7C5EC008C673B /* Kartoshka proTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,6 +230,10 @@
 					};
 					F39798392736757100E51781 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					F3B4AA5F2DC7C5EC008C673B = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = F39798392736757100E51781;
 					};
 				};
 			};
@@ -207,6 +252,7 @@
 			targets = (
 				F39798392736757100E51781 /* Kartoshka pro */,
 				F3085F042DC7A93500D98846 /* Kartoshka proUITests */,
+				F3B4AA5F2DC7C5EC008C673B /* Kartoshka proTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +277,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3B4AA5E2DC7C5EC008C673B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,6 +303,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3B4AA5C2DC7C5EC008C673B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -257,6 +317,11 @@
 			isa = PBXTargetDependency;
 			target = F39798392736757100E51781 /* Kartoshka pro */;
 			targetProxy = F3085F0B2DC7A93500D98846 /* PBXContainerItemProxy */;
+		};
+		F3B4AA652DC7C5EC008C673B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F39798392736757100E51781 /* Kartoshka pro */;
+			targetProxy = F3B4AA642DC7C5EC008C673B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -482,6 +547,51 @@
 			};
 			name = Release;
 		};
+		F3B4AA672DC7C5EC008C673B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5283YMQAC3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "site.knyazev.Kartoshka-proTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kartoshka pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kartoshka pro";
+			};
+			name = Debug;
+		};
+		F3B4AA682DC7C5EC008C673B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5283YMQAC3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "site.knyazev.Kartoshka-proTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kartoshka pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kartoshka pro";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -508,6 +618,15 @@
 			buildConfigurations = (
 				F39798492736757300E51781 /* Debug */,
 				F397984A2736757300E51781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3B4AA662DC7C5EC008C673B /* Build configuration list for PBXNativeTarget "Kartoshka proTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3B4AA672DC7C5EC008C673B /* Debug */,
+				F3B4AA682DC7C5EC008C673B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
