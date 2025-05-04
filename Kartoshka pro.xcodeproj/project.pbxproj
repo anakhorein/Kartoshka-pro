@@ -3,35 +3,60 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C12C11F18064C82AF644A21 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C12C668CA731D96F48791AE /* DetailView.swift */; };
-		3C12C5C13E7FA992A719876B /* nutrients.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */; };
-		3C12CD86F0723F37B9C06383 /* MultipleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */; };
+		F3085E792DC664CA00D98846 /* nutrients.json in Resources */ = {isa = PBXBuildFile; fileRef = F3085E782DC664CA00D98846 /* nutrients.json */; };
+		F3085E972DC67D8D00D98846 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3085E962DC67D8D00D98846 /* Config.swift */; };
+		F3085E9C2DC7637900D98846 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F3085E9A2DC7637900D98846 /* LICENSE */; };
+		F3085E9D2DC7637900D98846 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F3085E9B2DC7637900D98846 /* README.md */; };
 		F397983E2736757100E51781 /* Kartoshka_proApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397983D2736757100E51781 /* Kartoshka_proApp.swift */; };
-		F39798402736757100E51781 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397983F2736757100E51781 /* ContentView.swift */; };
 		F39798422736757300E51781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39798412736757300E51781 /* Assets.xcassets */; };
 		F39798452736757300E51781 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39798442736757300E51781 /* Preview Assets.xcassets */; };
-		F397984C2737BBA900E51781 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397984B2737BBA900E51781 /* Model.swift */; };
-		F397984E27382C3400E51781 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397984D27382C3400E51781 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F3085F0B2DC7A93500D98846 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F39798322736757100E51781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F39798392736757100E51781;
+			remoteInfo = "Kartoshka pro";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nutrients.json; sourceTree = "<group>"; };
-		3C12C668CA731D96F48791AE /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSelectionView.swift; sourceTree = "<group>"; };
+		F3085E782DC664CA00D98846 /* nutrients.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nutrients.json; sourceTree = "<group>"; };
+		F3085E962DC67D8D00D98846 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F3085E9A2DC7637900D98846 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F3085E9B2DC7637900D98846 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F3085EFF2DC7A85A00D98846 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F3085F052DC7A93500D98846 /* Kartoshka proUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kartoshka proUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F397983A2736757100E51781 /* Kartoshka pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kartoshka pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F397983D2736757100E51781 /* Kartoshka_proApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kartoshka_proApp.swift; sourceTree = "<group>"; };
-		F397983F2736757100E51781 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F39798412736757300E51781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39798442736757300E51781 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F397984B2737BBA900E51781 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		F397984D27382C3400E51781 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F3085E772DC6634F00D98846 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		F3085E7A2DC6651300D98846 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+		F3085E7E2DC6656D00D98846 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
+		F3085E842DC676B000D98846 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
+		F3085ED42DC7736E00D98846 /* Repositories */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Repositories; sourceTree = "<group>"; };
+		F3085ED72DC7742B00D98846 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
+		F3085F062DC7A93500D98846 /* Kartoshka proUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Kartoshka proUITests"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		F3085F022DC7A93500D98846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39798372736757100E51781 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,12 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3085EFE2DC7A85A00D98846 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3085EFF2DC7A85A00D98846 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F39798312736757100E51781 = {
 			isa = PBXGroup;
 			children = (
+				F3085E9A2DC7637900D98846 /* LICENSE */,
+				F3085E9B2DC7637900D98846 /* README.md */,
 				F397983C2736757100E51781 /* Kartoshka pro */,
+				F3085F062DC7A93500D98846 /* Kartoshka proUITests */,
+				F3085EFE2DC7A85A00D98846 /* Frameworks */,
 				F397983B2736757100E51781 /* Products */,
-				3C12C38B6DFE0AD5A0C1F429 /* nutrients.json */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				F397983A2736757100E51781 /* Kartoshka pro.app */,
+				F3085F052DC7A93500D98846 /* Kartoshka proUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,14 +99,17 @@
 		F397983C2736757100E51781 /* Kartoshka pro */ = {
 			isa = PBXGroup;
 			children = (
+				F3085ED72DC7742B00D98846 /* Utils */,
+				F3085ED42DC7736E00D98846 /* Repositories */,
+				F3085E962DC67D8D00D98846 /* Config.swift */,
+				F3085E842DC676B000D98846 /* ViewModels */,
+				F3085E7E2DC6656D00D98846 /* Models */,
+				F3085E7A2DC6651300D98846 /* Extensions */,
+				F3085E772DC6634F00D98846 /* Views */,
 				F397983D2736757100E51781 /* Kartoshka_proApp.swift */,
-				F397983F2736757100E51781 /* ContentView.swift */,
 				F39798412736757300E51781 /* Assets.xcassets */,
 				F39798432736757300E51781 /* Preview Content */,
-				F397984B2737BBA900E51781 /* Model.swift */,
-				F397984D27382C3400E51781 /* Functions.swift */,
-				3C12C668CA731D96F48791AE /* DetailView.swift */,
-				3C12CD4476EE9598F8C1C5AB /* MultipleSelectionView.swift */,
+				F3085E782DC664CA00D98846 /* nutrients.json */,
 			);
 			path = "Kartoshka pro";
 			sourceTree = "<group>";
@@ -85,6 +125,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F3085F042DC7A93500D98846 /* Kartoshka proUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3085F0D2DC7A93500D98846 /* Build configuration list for PBXNativeTarget "Kartoshka proUITests" */;
+			buildPhases = (
+				F3085F012DC7A93500D98846 /* Sources */,
+				F3085F022DC7A93500D98846 /* Frameworks */,
+				F3085F032DC7A93500D98846 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3085F0C2DC7A93500D98846 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3085F062DC7A93500D98846 /* Kartoshka proUITests */,
+			);
+			name = "Kartoshka proUITests";
+			packageProductDependencies = (
+			);
+			productName = "Kartoshka proUITests";
+			productReference = F3085F052DC7A93500D98846 /* Kartoshka proUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F39798392736757100E51781 /* Kartoshka pro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F39798482736757300E51781 /* Build configuration list for PBXNativeTarget "Kartoshka pro" */;
@@ -96,6 +159,14 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F3085E772DC6634F00D98846 /* Views */,
+				F3085E7A2DC6651300D98846 /* Extensions */,
+				F3085E7E2DC6656D00D98846 /* Models */,
+				F3085E842DC676B000D98846 /* ViewModels */,
+				F3085ED42DC7736E00D98846 /* Repositories */,
+				F3085ED72DC7742B00D98846 /* Utils */,
 			);
 			name = "Kartoshka pro";
 			productName = "Kartoshka pro";
@@ -109,9 +180,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					F3085F042DC7A93500D98846 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = F39798392736757100E51781;
+					};
 					F39798392736757100E51781 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -131,44 +206,109 @@
 			projectRoot = "";
 			targets = (
 				F39798392736757100E51781 /* Kartoshka pro */,
+				F3085F042DC7A93500D98846 /* Kartoshka proUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F3085F032DC7A93500D98846 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39798382736757100E51781 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3085E9C2DC7637900D98846 /* LICENSE in Resources */,
+				F3085E9D2DC7637900D98846 /* README.md in Resources */,
 				F39798452736757300E51781 /* Preview Assets.xcassets in Resources */,
 				F39798422736757300E51781 /* Assets.xcassets in Resources */,
-				3C12C5C13E7FA992A719876B /* nutrients.json in Resources */,
+				F3085E792DC664CA00D98846 /* nutrients.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F3085F012DC7A93500D98846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F39798362736757100E51781 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F397984C2737BBA900E51781 /* Model.swift in Sources */,
-				F39798402736757100E51781 /* ContentView.swift in Sources */,
+				F3085E972DC67D8D00D98846 /* Config.swift in Sources */,
 				F397983E2736757100E51781 /* Kartoshka_proApp.swift in Sources */,
-				F397984E27382C3400E51781 /* Functions.swift in Sources */,
-				3C12C11F18064C82AF644A21 /* DetailView.swift in Sources */,
-				3C12CD86F0723F37B9C06383 /* MultipleSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F3085F0C2DC7A93500D98846 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F39798392736757100E51781 /* Kartoshka pro */;
+			targetProxy = F3085F0B2DC7A93500D98846 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F3085F0E2DC7A93500D98846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5283YMQAC3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "site.knyazev.Kartoshka-proUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kartoshka pro";
+			};
+			name = Debug;
+		};
+		F3085F0F2DC7A93500D98846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5283YMQAC3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "site.knyazev.Kartoshka-proUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kartoshka pro";
+			};
+			name = Release;
+		};
 		F39798462736757300E51781 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -200,8 +340,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5283YMQAC3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -230,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -261,8 +404,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5283YMQAC3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -289,7 +434,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kartoshka pro/Preview Content\"";
-				DEVELOPMENT_TEAM = 5283YMQAC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -318,7 +462,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kartoshka pro/Preview Content\"";
-				DEVELOPMENT_TEAM = 5283YMQAC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,6 +485,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F3085F0D2DC7A93500D98846 /* Build configuration list for PBXNativeTarget "Kartoshka proUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3085F0E2DC7A93500D98846 /* Debug */,
+				F3085F0F2DC7A93500D98846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F39798352736757100E51781 /* Build configuration list for PBXProject "Kartoshka pro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

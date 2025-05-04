@@ -1,15 +1,33 @@
-//
-//  Model.swift
-//  Kartoshka pro
-//
-//  Created by Alexander Knyazev on 07.11.2021.
-//
-
 import Foundation
 
+/// Структура, представляющая информацию о продукте питания
+///
+/// Эта структура содержит полную информацию о продукте питания, включая его описание,
+/// идентификаторы и значения различных питательных веществ. Каждое питательное вещество
+/// представлено в виде опционального значения Float, где nXXXX соответствует
+/// идентификатору питательного вещества в базе данных.
+///
+/// ## Пример использования
+/// ```swift
+/// let food = Food(description: "Яблоко", fdc_id: 12345, id: 1)
+/// print(food.description) // Выведет: "Яблоко"
+/// ```
+///
+/// ## Важные замечания
+/// - Все значения питательных веществ являются опциональными, так как не все продукты содержат все питательные вещества
+/// - Идентификатор `fdc_id` соответствует базе данных FoodData Central
+/// - Структура поддерживает кодирование и декодирование (Codable) для работы с JSON
+/// - Реализует протокол Identifiable для использования в SwiftUI списках
 struct Food: Codable, Identifiable {
+    /// Описание продукта питания
+    ///
+    /// Содержит полное название и описание продукта на русском языке
     let description: String
+    /// Идентификатор продукта в базе данных FoodData Central
     let fdc_id: Int
+    /// Уникальный идентификатор продукта в системе
+    ///
+    /// Используется для внутренней идентификации продуктов в приложении
     let id: Int
     let n2048: Float?
     let n2052: Float?
@@ -943,62 +961,4 @@ struct FoodItem: Codable, Identifiable {
     let n2040: Float?
     let n2039: Float?
     let n2047: Float?
-}
-
-struct Category: Codable, Identifiable, Hashable {
-    let id: String
-    let title: String
-    let title_en: String
-}
-
-struct Answer: Codable {
-    let count: Int
-    let food: [Food]
-}
-
-struct FoodItemAnswerCommom: Codable{
-    let NDB_number: Int?
-    let data_type: String?
-    let description: String?
-    let fdc_id: Int?
-    let publication_date: String?
-}
-struct FoodItemNutrient: Codable{
-    let amount: Float?
-    let code: String?
-    let data_points: Int?
-    let derivation_id: Int?
-    let description: String?
-    let fdc_id: Int
-    let footnote: String?
-    let id: Int?
-    let max: Float?
-    let median: Float?
-    let min: Float?
-    let min_year_acquired: Int?
-    let name: String?
-    let ns_description: String?
-    let nutrient_id: Int?
-    let nutrient_nbr: String?
-    let rank: Int?
-    let source_id: Int?
-    let unit_name: String?
-}
-struct FoodItemAnswer: Codable {
-    let common: FoodItemAnswerCommom
-    //let attributes: [String]
-    //let components: [String]
-    let nutrients:  [FoodItemNutrient]
-}
-
-struct Nutrient: Codable, Identifiable, Hashable {
-    let id: String
-    let name: String
-    let nutrient_nbr: String
-    let rank: String
-    let unit_name: String
-}
-
-struct Nutrients: Codable {
-    let nutrient: [Nutrient]
-}
+} 
