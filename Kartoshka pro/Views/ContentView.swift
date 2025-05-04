@@ -218,7 +218,6 @@ struct ContentView: View {
                 }
             }
             .accessibilityElement(children: .combine)
-            .accessibilityIdentifier("foodItem")
             .accessibilityLabel(item.description)
             .background(viewModel.selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
             .font(Font.headline.weight(.light).monospacedDigit())
@@ -314,6 +313,9 @@ struct ContentView: View {
             }
             .padding(.leading, 10.0)
             .background(viewModel.selectedFoodId == item.id ? rowBackgroundColorHighlight : rowBackgroundColor)
+            .accessibilityIdentifier("foodItem")
+            .accessibilityLabel(item.description)
+            .accessibilityElement(children: .combine)
         }
     }
     

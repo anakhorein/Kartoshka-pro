@@ -55,6 +55,7 @@ struct DetailView: View {
                 .dynamicTypeSize(...DynamicTypeSize.accessibility5)
                 .accessibilityLabel(Locale.current.languageCode != "ru" ? "Food name" : "Название продукта")
                 .accessibilityValue(viewModel.foodItem?.common.description ?? "")
+                .accessibilityIdentifier("foodTitle")
                 .transition(.opacity)
             
             HStack {
@@ -67,6 +68,7 @@ struct DetailView: View {
             .accessibilityElement(children: .combine)
             .accessibilityLabel(Locale.current.languageCode != "ru" ? "Food Database Center ID" : "Идентификатор базы данных продуктов")
             .accessibilityValue(String(viewModel.foodItem?.common.fdc_id ?? 0))
+            .accessibilityIdentifier("fdcId")
             
             HStack {
                 Text("Publication date: ")
@@ -74,9 +76,11 @@ struct DetailView: View {
                 Text(viewModel.foodItem?.common.publication_date ?? "")
                     .font(.body)
             }
+            .padding(.top, 5)
             .accessibilityElement(children: .combine)
             .accessibilityLabel(Locale.current.languageCode != "ru" ? "Publication date" : "Дата публикации")
             .accessibilityValue(viewModel.foodItem?.common.publication_date ?? "")
+            .accessibilityIdentifier("publicationDate")
             
             // Nutrients
             nutrientsView
@@ -162,6 +166,7 @@ struct DetailView: View {
              NSLocalizedString("in Google", comment: ""),
              destination: URL(string: "https://www.google.com/search?q=\(food.description.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")")!)
             .foregroundColor(.blue)
+            .accessibilityIdentifier("googleLink")
             .accessibilityLabel(Locale.current.languageCode != "ru" ? "Search in Google" : "Поиск в Google")
             .accessibilityHint(Locale.current.languageCode != "ru" ? "Opens Google search for this food item" : "Открывает поиск Google для этого продукта")
     }
