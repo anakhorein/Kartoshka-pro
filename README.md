@@ -45,7 +45,7 @@ Kartoshka pro/
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/yourusername/Kartoshka-pro.git
+git clone https://github.com/anakhorein/Kartoshka-pro.git
 ```
 
 2. Откройте проект в Xcode:
@@ -62,6 +62,6 @@ open "Kartoshka pro.xcodeproj"
 
 ## Контакты
 
-Александр Князев - [@your_twitter](https://twitter.com/your_twitter)
+Александр Князев - [knyazev.site](https://knyazev.site)
 
-Проект доступен по адресу: [https://github.com/yourusername/Kartoshka-pro](https://github.com/yourusername/Kartoshka-pro) 
+Проект доступен по адресу: [https://github.com/anakhorein/Kartoshka-pro](https://github.com/anakhorein/Kartoshka-pro) 
