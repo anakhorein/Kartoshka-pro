@@ -229,38 +229,21 @@ struct ContentView: View {
     
     // Individual nutrient cell component
     private func NutrientCell(item: Food, nutrient: Nutrient) -> some View {
-        let val = item["n\(nutrient.id)"]
-        if let temp = val as? Float {
-            let safeValue = temp.isNaN || temp.isInfinite ? 0.0 : temp
-            return AnyView(
-                Text(String(format: safeValue > 100 ? "%.0f" : "%.1f", locale: Locale.current, safeValue))
-                    .foregroundColor(viewModel.selectedFoodId == item.id ? rowForegroundColorHighlight : 
-                                    viewModel.sortType == "n\(nutrient.id)" ? colHighlightColor : colDefaultColor)
-                    .frame(
-                        minWidth: 0,
-                        maxWidth: 49,
-                        minHeight: 0,
-                        alignment: .trailing
-                    )
-                    .font(.body)
-                    //.animation(.easeInOut(duration: 0.2), value: viewModel.selectedFoodId)
-                    //.animation(.easeInOut(duration: 0.2), value: viewModel.sortType)
-                    .accessibilityLabel("\(nutrient.name): \(String(format: safeValue > 100 ? "%.0f" : "%.1f", locale: Locale.current, safeValue))")
-            )
-        } else {
-            return AnyView(
-                Text("0.0")
-                    .foregroundColor(viewModel.selectedFoodId == item.id ? rowForegroundColorHighlight : 
-                                    viewModel.sortType == "n\(nutrient.id)" ? colHighlightColor : colDefaultColor)
-                    .frame(
-                        minWidth: 0,
-                        maxWidth: 49,
-                        minHeight: 0,
-                        alignment: .trailing
-                    )
-                    .font(.body)
-            )
-        }
+        let val = item.nutrientValues["n\(nutrient.id)"] ?? 0.0
+        let safeValue = val.isNaN || val.isInfinite ? 0.0 : val
+        return AnyView(
+            Text(String(format: safeValue > 100 ? "%.0f" : "%.1f", locale: Locale.current, safeValue))
+                .foregroundColor(viewModel.selectedFoodId == item.id ? rowForegroundColorHighlight : 
+                                viewModel.sortType == "n\(nutrient.id)" ? colHighlightColor : colDefaultColor)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: 49,
+                    minHeight: 0,
+                    alignment: .trailing
+                )
+                .font(.body)
+                .accessibilityLabel("\(nutrient.name): \(String(format: safeValue > 100 ? "%.0f" : "%.1f", locale: Locale.current, safeValue))")
+        )
     }
     
     // Food names column component
@@ -380,14 +363,14 @@ struct ContentView: View {
                 }) {
                     if viewModel.categoryCurrent == category {
                         if category.id == "branded_food" {
-                            Label("\(category.title) \n(may contain wrong data)", systemImage: "checkmark")
+                            Label("\(category.title) \n(may contain incorrect data)", systemImage: "checkmark")
                                 .lineLimit(2)
                         } else {
                             Label("\(category.title)", systemImage: "checkmark")
                         }
                     } else {
                         if category.id == "branded_food" {
-                            Text("\(category.title) \n(may contain wrong data)")
+                            Text("\(category.title) \n(may contain incorrect data)")
                                 .lineLimit(2)
                         } else {
                             Text("\(category.title)")
@@ -417,15 +400,3 @@ struct ColumnHeader: View {
             .font(Font.headline.weight(.light))
     }
 }
-
-// Protocol for accessing properties by string key
-protocol PropertyReflectable {}
-
-extension PropertyReflectable {
-    subscript(key: String) -> Any? {
-        let m = Mirror(reflecting: self)
-        return m.children.first { $0.label == key }?.value
-    }
-}
-
-extension Food: PropertyReflectable {}
