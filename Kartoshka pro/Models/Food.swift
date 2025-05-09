@@ -167,4 +167,4 @@ struct FoodItem: Codable, Identifiable {
         }
         nutrientValues = values
     }
-} 
+}

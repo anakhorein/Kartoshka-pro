@@ -170,7 +170,7 @@ struct ContentView: View {
             nutrientDataRows
         }.frame(
             minWidth: 0,
-            maxWidth: .infinity,
+            maxWidth: 49*4,
             minHeight: 0,
             maxHeight: .infinity,
             alignment: .topLeading
